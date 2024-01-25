@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
 #while loop to print Best School 4_bad_luck_8_is_your_chance
 
-count=0
-while [ $count -lt 10 ];
+count=1
+while [ $count -le 10 ];
 do
+    echo $count
     if [ $count -eq 4 ];
     then
         echo "bad luck"
