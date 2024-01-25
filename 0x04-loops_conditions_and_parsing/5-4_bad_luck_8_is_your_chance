@@ -2,17 +2,17 @@
 #while loop to print Best School 4_bad_luck_8_is_your_chance
 
 count=0
-while [ $count -lt 10 ];
+
+while [ $count -lt 10 ]
 do
-    echo $count
-    if [ $count -eq 3 ];
-    then
-        echo "bad luck"
-    elif [ $count -eq 7 ];
-    then
-        echo "good luck"
-    else
+  if [ $count -eq 3 ]
+  then
+    echo "bad luck"
+  elif [ $count -eq 7 ]
+  then
+    echo "good luck"
+  else
     echo "Best School"
-    fi
-    (( count++ ))
+  fi
+  (( count++ ))
 done
