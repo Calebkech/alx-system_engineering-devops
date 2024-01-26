@@ -76,3 +76,12 @@ Terminal #0
 Write a Bash script that kills the process 7-highlander.
 
 Terminal #0
+
+* 9. Process and PID file `100-process_and_pid_file`
+Write a Bash script that:
+
+Creates the file /var/run/myscript.pid containing its PID
+Displays To infinity and beyond indefinitely
+Displays I hate the kill command when receiving a SIGTERM signal
+Displays Y U no love me?! when receiving a SIGINT signal
+Deletes the file /var/run/myscript.pid and terminates itself when receiving a SIGQUIT or SIGTERM signal
