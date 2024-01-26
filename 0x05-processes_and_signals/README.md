@@ -53,3 +53,11 @@ Requirements:
 
 You must use kill
 Terminal #0
+
+* 6. Stop me if you can - file `6-stop_me_if_you_can`
+Write a Bash script that stops 4-to_infinity_and_beyond process.
+
+Requirements:
+
+You cannot use kill or killall
+Terminal #0
