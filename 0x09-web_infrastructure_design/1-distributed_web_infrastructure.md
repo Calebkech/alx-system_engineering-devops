@@ -1,6 +1,6 @@
 # Distributed Web Infrastructure
 
-![Image of a distributed web infrastructure](1-distributed_web_infrastructure.drawio.PNG)
+![Image of a distributed web infrastructure](1-distributed_web_infrastructure.drawio.png)
 
 ## Description
 
