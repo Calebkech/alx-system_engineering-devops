@@ -1,25 +1,17 @@
 #!/usr/bin/env bash
 
-# Check if HAProxy is already installed
-if ! command -v haproxy &> /dev/null; then
-    # Install HAProxy from default repositories
-    apt-get update
-    apt-get install -y haproxy
-else
-    echo "HAProxy is already installed."
-fi
+# Install HAProxy and dependencies
+apt-get install -y software-properties-common
+add-apt-repository -y ppa:vbernat/haproxy-1.8
+apt-get -y update
+apt-get install -y haproxy
 
-# Check if installation was successful
-if ! command -v haproxy &> /dev/null; then
-    echo "Error: HAProxy installation failed."
-    exit 1
-fi
-
-# Configure HAProxy
+# Enable HAProxy service
 echo "ENABLED=1" > /etc/default/haproxy
 
-# Listen to web1 and web2 servers
-cat <<EOF >> /etc/haproxy/haproxy.cfg
+# Configure HAProxy to listen to web servers if not already configured
+if ! grep -q "339475-web-01" /etc/haproxy/haproxy.cfg; then
+    cat <<EOF >> /etc/haproxy/haproxy.cfg
 listen load_balancer
    bind *:80
    mode http
@@ -29,17 +21,7 @@ listen load_balancer
    server 339475-web-01 3.85.168.15:80 check
    server 339475-web-02 100.27.13.191:80 check
 EOF
-
-# Restart or start HAProxy service
-if systemctl is-active --quiet haproxy; then
-    systemctl restart haproxy
-else
-    service haproxy start
 fi
 
-# Check if HAProxy service is running
-if systemctl is-active --quiet haproxy; then
-    echo "HAProxy is running."
-else
-    echo "Error: HAProxy failed to start."
-fi
+# Start HAProxy service
+service haproxy start
