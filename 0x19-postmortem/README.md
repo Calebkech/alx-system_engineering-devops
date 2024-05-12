@@ -6,21 +6,21 @@
 
 ### Summary
 
-On May 01st, 2024, at midnight PST, users encountered a 504 error when attempting to access a website hosted on our server. The server operates on a LAMP stack.
+On May 10th, 2024, at 3:00 AM EAT (East Africa Time), users encountered a 504 error when attempting to access a website hosted on our server. The server operates on a LAMP stack.
 
 ### Timeline
 
-- **00:00 PST**: Users reported receiving a 500 error when accessing the website.
-- **00:05 PST**: Checked Apache and MySQL status, confirmed they were running.
-- **00:10 PST**: Website still not loading correctly, server and database functioning normally.
-- **00:12 PST**: Restarted Apache server, website responded with status 200 OK when accessed via curl.
-- **00:18 PST**: Reviewed error logs for potential issues.
-- **00:25 PST**: Discovered Apache server was shutting down prematurely, PHP error logs missing.
-- **00:30 PST**: Found PHP error logging disabled in php.ini, enabled logging.
-- **00:32 PST**: Restarted Apache server, checked PHP error logs.
-- **00:36 PST**: PHP error log revealed a misspelled file name in wp-settings.php.
-- **00:38 PST**: Corrected file name and restarted Apache.
-- **00:40 PST**: Website resumed normal operation.
+- **03:00 AM EAT**: Users reported receiving a 500 error when accessing the website.
+- **03:05 AM EAT**: Checked Apache and MySQL status and confirmed they were running.
+- **03:10 AM EAT**: Website still not loading correctly, server and database functioning normally.
+- **03:12 AM EAT**: Restarted Apache server, website responded with status 200 OK when accessed via curl.
+- **03:18 AM EAT**: Reviewed error logs for potential issues.
+- **03:25 AM EAT**: Discovered Apache server was shutting down prematurely, PHP error logs missing.
+- **03:30 AM EAT**: Found PHP error logging disabled in php.ini, enabled logging.
+- **03:32 AM EAT**: Restarted Apache server and checked PHP error logs.
+- **03:36 AM EAT**: The PHP error log revealed a misspelled file name in wp-settings.php.
+- **03:38 AM EAT**: Corrected file name and restarted Apache.
+- **03:40 AM EAT**: Website resumed normal operation.
 
 ### Root Cause and Resolution
 
